@@ -1,8 +1,6 @@
 package com.mrtdk.backargumentexample.main
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,20 +8,18 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.ListItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.mrtdk.backargumentexample.back_argument.BackArgumentHolder
+import com.mrtdk.backargumentexample.app.navigation.SavedStateBackArgumentHolder
 import com.mrtdk.backargumentexample.dialog.api.commentDialogRoute
 
 @Composable
@@ -32,7 +28,7 @@ fun MainScreen(
     navController: NavController,
 ) {
     val vm = viewModel<MainViewModel>(
-        factory = MainViewModelFactory(BackArgumentHolder(savedStateHandle))
+        factory = MainViewModelFactory(SavedStateBackArgumentHolder(savedStateHandle))
     )
     
     DisposableEffect(navController) {

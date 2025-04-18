@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.mrtdk.backargumentexample.back_argument.with
+import com.mrtdk.backargumentexample.app.navigation.with
 import com.mrtdk.backargumentexample.dialog.api.commentResult
 
 @Composable
